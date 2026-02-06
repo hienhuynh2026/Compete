@@ -23,9 +23,16 @@
         background: radial-gradient(1200px 800px at 20% 10%, #1f2937 0%, var(--bg) 50%, #020617 100%);
         color: var(--text);
         min-height: 100vh;
-        display: grid;
-        place-items: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         padding: 32px;
+      }
+      .page-title {
+        font-size: clamp(2.75rem, 7vw, 4.5rem);
+        margin: 12px 0 28px;
+        letter-spacing: 0.6px;
+        text-align: center;
       }
       .card {
         width: min(720px, 100%);
@@ -36,16 +43,30 @@
         box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
         backdrop-filter: blur(8px);
       }
-      h1 {
-        font-size: clamp(2.5rem, 6vw, 4rem);
-        margin: 0 0 12px;
-        letter-spacing: 0.5px;
-      }
       p {
         margin: 0 0 24px;
         color: var(--muted);
         font-size: 1.05rem;
         line-height: 1.6;
+      }
+      .credit-box {
+        margin: 18px 0 28px;
+        padding: 16px 18px;
+        border-radius: 12px;
+        border: 1px solid rgba(148, 163, 184, 0.35);
+        background: rgba(15, 23, 42, 0.6);
+        color: var(--text);
+        font-size: 1rem;
+        line-height: 1.6;
+        white-space: pre-line;
+      }
+      .credit-box strong {
+        display: block;
+        margin-bottom: 8px;
+        color: var(--accent);
+        text-transform: uppercase;
+        letter-spacing: 0.3px;
+        font-size: 0.8rem;
       }
       .badge {
         display: inline-flex;
@@ -92,13 +113,19 @@
     </style>
   </head>
   <body>
+    <h1 class="page-title">Compete</h1>
     <main class="card">
       <div class="badge">Live on GitHub Pages</div>
-      <h1>Compete</h1>
       <p>
         Welcome to Compete. Your site is ready to deploy. Update this page to share your
         projects, ideas, and wins.
       </p>
+      <div class="credit-box">
+        <strong>Credit</strong>
+        Hien Huynh
+        Edwin Medrano Villela
+        David Chen
+      </div>
       <div class="actions">
         <a class="button" href="https://github.com/hienhuynh2026/Compete">View Repository</a>
         <a class="button secondary" href="#" onclick="alert('Replace this link with your content.'); return false;">Get Started</a>
