@@ -5,15 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Compete | Move Better Every Day</title>
     <style>
+      @import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;800&display=swap");
+
       :root {
-        --bg: #f4f5f7;
-        --surface: #ffffff;
-        --text: #4b4b4b;
-        --muted: #9fa1a7;
+        --bg: #000000;
+        --surface: #0e0e10;
+        --text: #ffffff;
+        --muted: #d0d4dc;
         --primary: #58cc02;
         --primary-dark: #45a500;
         --secondary: #1cb0f6;
-        --border: #d7d7d7;
+        --border: #2a2b30;
       }
       * {
         box-sizing: border-box;
@@ -44,9 +46,15 @@
         align-items: center;
         gap: 10px;
         color: var(--primary);
-        font-size: 2rem;
-        font-weight: 800;
+        font-size: 2.05rem;
+        font-weight: 700;
         letter-spacing: 0.2px;
+      }
+      .brand-text {
+        font-family: "Orbitron", "DS-Digital", "Digital-7 Mono", monospace;
+        letter-spacing: 2.4px;
+        text-transform: uppercase;
+        text-shadow: 0 0 12px rgba(88, 204, 2, 0.35);
       }
       .brand-mark {
         font-size: 2rem;
@@ -86,8 +94,8 @@
         position: absolute;
         inset: 12% 12%;
         border-radius: 999px;
-        background: linear-gradient(160deg, #dfffb6 0%, #f5ffe8 40%, #d8fbe7 100%);
-        border: 4px solid #d4efbc;
+        background: radial-gradient(circle at 40% 40%, #1a1e14 0%, #121710 62%, #0a0f09 100%);
+        border: 3px solid #243117;
       }
       .fit-icon {
         position: absolute;
@@ -95,11 +103,11 @@
         height: 78px;
         border-radius: 999px;
         background: var(--surface);
-        border: 2px solid #e7e7e7;
+        border: 2px solid #26272b;
         display: grid;
         place-items: center;
         font-size: 2rem;
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.38);
       }
       .fit-icon.run {
         top: 4%;
@@ -138,7 +146,7 @@
       .headline {
         margin: 0;
         text-align: center;
-        color: #53545a;
+        color: var(--text);
         font-weight: 800;
         font-size: clamp(2rem, 3.4vw, 3.1rem);
         line-height: 1.16;
@@ -146,7 +154,7 @@
       .subtext {
         margin: 14px 0 0;
         text-align: center;
-        color: #75767c;
+        color: var(--muted);
         font-size: 1rem;
         line-height: 1.5;
       }
@@ -170,15 +178,15 @@
       a.button.secondary {
         background: var(--surface);
         color: var(--secondary);
-        border: 2px solid #d4d4d4;
+        border: 2px solid #2f3137;
         border-bottom-width: 4px;
       }
       a.button:hover {
         filter: brightness(1.02);
       }
       .activity-strip {
-        border-top: 2px solid #e1e1e1;
-        background: #efeff0;
+        border-top: 1px solid #1f2025;
+        background: #060607;
       }
       .activity-list {
         width: min(1150px, 100%);
@@ -193,7 +201,7 @@
         align-items: center;
         justify-content: center;
         gap: 8px;
-        color: #73747a;
+        color: var(--text);
         font-weight: 700;
         text-transform: uppercase;
         font-size: 0.86rem;
@@ -206,7 +214,7 @@
         display: grid;
         place-items: center;
         font-size: 0.95rem;
-        border: 1px solid #d9d9d9;
+        border: 1px solid #2f3137;
       }
       .coach-btn {
         position: fixed;
@@ -262,7 +270,7 @@
   <body>
     <div class="page">
       <header class="topbar">
-        <div class="brand"><span class="brand-mark">💪</span>compete</div>
+        <div class="brand"><span class="brand-mark">💪</span><span class="brand-text">compete</span></div>
         <div class="top-action">program language: fitness</div>
       </header>
 
