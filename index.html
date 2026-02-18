@@ -33,6 +33,16 @@
         margin: 12px 0 28px;
         letter-spacing: 0.6px;
         text-align: center;
+        text-transform: uppercase;
+      }
+      .subtitle {
+        margin: -14px 0 28px;
+        text-align: center;
+        color: var(--accent);
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        font-weight: 700;
+        font-size: 0.78rem;
       }
       .card {
         width: min(720px, 100%);
@@ -81,6 +91,31 @@
         text-transform: uppercase;
         font-size: 0.75rem;
       }
+      .stats {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 10px;
+        margin: 0 0 24px;
+      }
+      .stat {
+        border: 1px solid rgba(148, 163, 184, 0.25);
+        background: rgba(15, 23, 42, 0.55);
+        border-radius: 12px;
+        padding: 12px;
+        text-align: center;
+      }
+      .stat-label {
+        color: var(--muted);
+        font-size: 0.72rem;
+        letter-spacing: 0.7px;
+        text-transform: uppercase;
+      }
+      .stat-value {
+        margin-top: 4px;
+        color: var(--text);
+        font-size: 1rem;
+        font-weight: 700;
+      }
       .actions {
         display: flex;
         flex-wrap: wrap;
@@ -110,16 +145,36 @@
         color: var(--muted);
         font-size: 0.9rem;
       }
+      @media (max-width: 620px) {
+        .stats {
+          grid-template-columns: 1fr;
+        }
+      }
     </style>
   </head>
   <body>
     <h1 class="page-title">Compete</h1>
+    <div class="subtitle">Train Hard • Play Smart • Win Together</div>
     <main class="card">
-      <div class="badge">Live on GitHub Pages</div>
+      <div class="badge">🏆 Official Team Hub • Live on GitHub Pages</div>
       <p>
-        Welcome to Compete. Your site is ready to deploy. Update this page to share your
-        projects, ideas, and wins.
+        Welcome to Compete, your game-day headquarters. Track highlights, prep for matchups,
+        and celebrate every win across the season.
       </p>
+      <section class="stats" aria-label="Team stats">
+        <div class="stat">
+          <div class="stat-label">Season Record</div>
+          <div class="stat-value">12-3</div>
+        </div>
+        <div class="stat">
+          <div class="stat-label">Championships</div>
+          <div class="stat-value">4</div>
+        </div>
+        <div class="stat">
+          <div class="stat-label">Home Crowd</div>
+          <div class="stat-value">#1 Energy</div>
+        </div>
+      </section>
       <div class="credit-box">
         <strong>Credit</strong>
         Hien Huynh
@@ -127,11 +182,11 @@
         David Chen
       </div>
       <div class="actions">
-        <a class="button" href="https://docs.google.com/presentation/d/13dJHq5qTULWVZycxV1gJCgg-X2B35aUa2I1Hfx-jxZU/edit?usp=sharing" target="_blank" rel="noopener noreferrer">GR1</a>
-        <a class="button secondary" href="https://docs.google.com/presentation/d/1OxkgFLcaIH29sO-5d8dE9x6rxrD3RxA100aFrnBnErY/edit?usp=sharing" target="_blank" rel="noopener noreferrer">GR2</a>
-        <a class="button secondary" href="https://docs.google.com/presentation/d/1gqJGWvlZoCA3u8hhYwWzGpmlxoLrYujgvzYsFuJeMeQ/edit?usp=sharing" target="_blank" rel="noopener noreferrer">GR4</a>
+        <a class="button" href="https://docs.google.com/presentation/d/13dJHq5qTULWVZycxV1gJCgg-X2B35aUa2I1Hfx-jxZU/edit?usp=sharing" target="_blank" rel="noopener noreferrer">Game Report 1</a>
+        <a class="button secondary" href="https://docs.google.com/presentation/d/1OxkgFLcaIH29sO-5d8dE9x6rxrD3RxA100aFrnBnErY/edit?usp=sharing" target="_blank" rel="noopener noreferrer">Game Report 2</a>
+        <a class="button secondary" href="https://docs.google.com/presentation/d/1gqJGWvlZoCA3u8hhYwWzGpmlxoLrYujgvzYsFuJeMeQ/edit?usp=sharing" target="_blank" rel="noopener noreferrer">Game Report 4</a>
       </div>
-      <footer>© 2026 Compete</footer>
+      <footer>© 2026 Compete Athletics</footer>
     </main>
   </body>
 </html>
