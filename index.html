@@ -404,6 +404,22 @@
         letter-spacing: 0.6px;
       }
 
+      .team-headshot {
+        width: 90px;
+        height: 90px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 14px;
+        border: 2px solid var(--border-bright);
+        filter: grayscale(20%);
+        transition: filter 0.2s ease, border-color 0.2s ease;
+      }
+
+      .team-card:hover .team-headshot {
+        filter: grayscale(0%);
+        border-color: rgba(88, 204, 2, 0.5);
+      }
+
       /* ── DELIVERABLES SECTION ── */
       .deliverables-grid {
         display: grid;
@@ -560,14 +576,17 @@
         <h2 class="section-title" id="team-heading">The Team</h2>
         <div class="team-grid">
           <div class="team-card">
+            <img class="team-headshot" src="assets/HienHeadshot.png" alt="Hien H." />
             <div class="team-name">Hien H.</div>
             <div class="team-role">Development Lead</div>
           </div>
           <div class="team-card">
+            <img class="team-headshot" src="assets/EdwinHeadshot.png" alt="Edwin M." />
             <div class="team-name">Edwin M.</div>
             <div class="team-role">Design Lead</div>
           </div>
           <div class="team-card">
+            <img class="team-headshot" src="assets/DaveHeadshot.png" alt="David C." />
             <div class="team-name">David C.</div>
             <div class="team-role">Research Lead</div>
           </div>
@@ -627,11 +646,11 @@
             </div>
           </div>
 
-          <div class="gr-card coming-soon">
+          <div class="gr-card">
             <div class="gr-card-label">GR8</div>
             <div class="gr-card-title">Interactive High-Fi Prototype</div>
             <div class="gr-card-links">
-              <span class="gr-coming">Coming soon</span>
+              <a class="gr-link" href="https://drive.google.com/drive/folders/1PST6dHMiklJfv5xfB6-1-kDZS93VaDbL?usp=drive_link" target="_blank" rel="noopener noreferrer">Drive Folder</a>
             </div>
           </div>
 
