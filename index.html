@@ -73,7 +73,6 @@
         100% { transform: translateY(64px); }
       }
 
-      /* Floating particles */
       .particles {
         position: absolute;
         inset: 0;
@@ -93,10 +92,40 @@
         100% { transform: translateY(-10vh); opacity: 0; }
       }
 
-      /* ── TOPBAR ── */
       .topbar {
         position: relative;
         z-index: 2;
+      }
+
+      .brand,
+      .course-tag {
+        position: relative;
+        z-index: 1;
+      }
+
+      .course-tag {
+        margin-left: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        line-height: 1.2;
+      }
+
+.course-name {
+        font-family: "Orbitron", monospace;
+        font-size: 0.95rem;
+        font-weight: 800;
+        letter-spacing: 2px;
+        color: var(--primary);
+        text-shadow: 0 0 10px rgba(88, 204, 2, 0.4);
+      }
+
+      .course-term {
+        font-family: "Orbitron", monospace;
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 1.5px;
+        color: var(--muted);
       }
 
       .hero {
@@ -155,7 +184,6 @@
         100% { background-position: 200% center; }
       }
 
-      /* ── HERO ── */
       .hero {
         width: min(1100px, 100%);
         margin: 12px auto 0;
@@ -192,7 +220,6 @@
         position: relative;
       }
 
-      /* Glow halo behind dashboard */
       .visual-board::before {
         content: "";
         position: absolute;
@@ -305,7 +332,6 @@
         box-shadow: 0 8px 24px rgba(28, 176, 246, 0.2);
       }
 
-      /* ── TEAM SECTION ── */
       .section-wrapper {
         position: relative;
         z-index: 1;
@@ -313,7 +339,6 @@
         margin: 0 auto;
         padding: 0 28px 64px;
       }
-      /* ── SCROLL HINT ── */
       .scroll-hint {
         position: fixed;
         bottom: 32px;
@@ -417,7 +442,6 @@
         border-color: rgba(88, 204, 2, 0.5);
       }
 
-      /* ── DELIVERABLES SECTION ── */
       .deliverables-grid {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -465,6 +489,11 @@
         gap: 8px;
       }
 
+      .gr-card-links-column {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
       .gr-link {
         display: inline-block;
         text-decoration: none;
@@ -489,7 +518,6 @@
         font-style: italic;
       }
 
-      /* ── VIDEO SECTION ── */
       .video-wrapper {
         position: relative;
         max-width: 760px;
@@ -573,7 +601,6 @@
         display: block;
       }
 
-      /* ── RESPONSIVE ── */
       @media (max-width: 980px) {
         .hero {
           flex-direction: column;
@@ -609,10 +636,8 @@
     </style>
   </head>
   <body>
-    <!-- Floating particles -->
     <div class="particles" id="particles" aria-hidden="true"></div>
 
-    <!-- Scroll hint (fixed, fades on scroll) -->
     <div class="scroll-hint" id="scrollHint" aria-hidden="true">
       <span class="scroll-hint-text">Meet the team below</span>
       <svg class="scroll-arrow" width="32" height="32" viewBox="0 0 24 24" fill="none"
@@ -634,7 +659,10 @@
           </span>
           <span class="brand-text">compete</span>
         </div>
-
+        <div class="course-tag">
+          <span class="course-name">CS185</span>
+          <span class="course-term">W26</span>
+        </div>
       </header>
 
       <main class="hero">
@@ -652,7 +680,6 @@
         </section>
       </main>
 
-      <!-- Team Section -->
       <section class="section-wrapper team-section" aria-labelledby="team-heading">
         <h2 class="section-title" id="team-heading">The Team</h2>
         <div class="team-grid">
@@ -674,7 +701,6 @@
         </div>
       </section>
 
-      <!-- Concept Video Section -->
       <section class="section-wrapper" aria-labelledby="video-heading">
         <h2 class="section-title" id="video-heading">Demo Video</h2>
         <div class="video-wrapper">
@@ -701,7 +727,6 @@
         </div>
       </section>
 
-      <!-- Deliverables Section -->
       <section class="section-wrapper" aria-labelledby="deliverables-heading">
         <h2 class="section-title" id="deliverables-heading">Deliverables</h2>
         <div class="deliverables-grid">
@@ -724,7 +749,7 @@
 
           <div class="gr-card">
             <div class="gr-card-label">GR4</div>
-            <div class="gr-card-title">Demo Video</div>
+            <div class="gr-card-title">Concept Video</div>
             <div class="gr-card-links">
               <a class="gr-link" href="https://docs.google.com/presentation/d/1gqJGWvlZoCA3u8hhYwWzGpmlxoLrYujgvzYsFuJeMeQ/edit?usp=sharing" target="_blank" rel="noopener noreferrer">Slides</a>
             </div>
@@ -734,15 +759,16 @@
             <div class="gr-card-label">GR5</div>
             <div class="gr-card-title">Sketching, Low-Fi Prototyping &amp; Usability Testing</div>
             <div class="gr-card-links">
-              <a class="gr-link" href="https://drive.google.com/drive/u/2/folders/1l6ceCp5-AQnwScW7CewTTObBLLax9DmQ" target="_blank" rel="noopener noreferrer">Drive Folder</a>
+              <a class="gr-link" href="https://drive.google.com/drive/folders/1l6ceCp5-AQnwScW7CewTTObBLLax9DmQ?usp=sharing" target="_blank" rel="noopener noreferrer">Drive Folder</a>
             </div>
           </div>
 
           <div class="gr-card">
             <div class="gr-card-label">GR6</div>
             <div class="gr-card-title">Interactive Medium-Fi Prototype</div>
-            <div class="gr-card-links">
-              <a class="gr-link" href="https://drive.google.com/drive/u/2/folders/1QEWne6f6PUynguNXw8gi6ccHZOy2pLU0" target="_blank" rel="noopener noreferrer">Drive Folder</a>
+            <div class="gr-card-links gr-card-links-column">
+              <a class="gr-link" href="https://drive.google.com/drive/folders/1QEWne6f6PUynguNXw8gi6ccHZOy2pLU0?usp=sharing" target="_blank" rel="noopener noreferrer">Drive Folder</a>
+              <a class="gr-link" href="https://www.figma.com/proto/MZ90wmcALDWJ4LTK5IkIJt/Compete--GR6-?node-id=42-540&amp;starting-point-node-id=42%3A540" target="_blank" rel="noopener noreferrer">Figma</a>
             </div>
           </div>
 
@@ -757,8 +783,9 @@
           <div class="gr-card">
             <div class="gr-card-label">GR8</div>
             <div class="gr-card-title">Interactive High-Fi Prototype</div>
-            <div class="gr-card-links">
+            <div class="gr-card-links gr-card-links-column">
               <a class="gr-link" href="https://drive.google.com/drive/folders/1PST6dHMiklJfv5xfB6-1-kDZS93VaDbL?usp=drive_link" target="_blank" rel="noopener noreferrer">Drive Folder</a>
+              <a class="gr-link" href="https://www.figma.com/proto/ZCCL6JBplmR1kWyqR3Qt7L/-Compete--GR8?node-id=1-10227&amp;p=f&amp;m=dev&amp;scaling=scale-down&amp;content-scaling=fixed&amp;page-id=0%3A1&amp;starting-point-node-id=1%3A10227&amp;show-proto-sidebar=1" target="_blank" rel="noopener noreferrer">Figma</a>
             </div>
           </div>
 
@@ -770,11 +797,11 @@
             </div>
           </div>
 
-          <div class="gr-card coming-soon">
+          <div class="gr-card">
             <div class="gr-card-label">GR10</div>
             <div class="gr-card-title">Final Report</div>
             <div class="gr-card-links">
-              <span class="gr-coming">Coming soon</span>
+              <a class="gr-link" href="https://docs.google.com/document/d/1tAWAMNPH1EEvDp78pNqEa1F9u8vwJVMgV94bAbvN7qQ/edit?tab=t.0" target="_blank" rel="noopener noreferrer">Google Doc</a>
             </div>
           </div>
 
@@ -784,7 +811,6 @@
     </div>
 
     <script>
-      // Hide scroll hint on scroll
       (function () {
         const hint = document.getElementById('scrollHint');
         window.addEventListener('scroll', function () {
@@ -796,7 +822,6 @@
         }, { passive: true });
       })();
 
-      // Video click-to-play
       (function () {
         const frame = document.getElementById('videoFrame');
         const btn = document.getElementById('videoPlayBtn');
@@ -809,8 +834,7 @@
         frame.querySelector('.video-thumb').addEventListener('click', play);
       })();
 
-      // Spawn floating particles
-      (function () {
+(function () {
         const container = document.getElementById("particles");
         const colors = ["#58cc02", "#1cb0f6", "#ff9600", "#a855f7"];
         for (let i = 0; i < 22; i++) {
