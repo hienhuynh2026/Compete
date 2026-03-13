@@ -31,7 +31,6 @@
         overflow-x: hidden;
       }
 
-      /* ── ANIMATED BACKGROUND ── */
       .page {
         min-height: 100vh;
         display: flex;
@@ -40,7 +39,6 @@
         overflow: hidden;
       }
 
-      /* Ambient glow blobs */
       .page::before {
         content: "";
         position: absolute;
@@ -58,7 +56,6 @@
         100% { opacity: 1; }
       }
 
-      /* Scrolling grid */
       .page::after {
         content: "";
         position: absolute;
@@ -492,6 +489,90 @@
         font-style: italic;
       }
 
+      /* ── VIDEO SECTION ── */
+      .video-wrapper {
+        position: relative;
+        max-width: 760px;
+        margin-inline: auto;
+      }
+
+      .video-frame {
+        position: relative;
+        border-radius: 18px;
+        overflow: hidden;
+        border: 1.5px solid var(--border-bright);
+        box-shadow:
+          0 0 0 1px rgba(88, 204, 2, 0.15),
+          0 16px 48px rgba(0, 0, 0, 0.6),
+          0 0 40px rgba(88, 204, 2, 0.08);
+        background: #000;
+        aspect-ratio: 16 / 9;
+        transition: box-shadow 0.3s ease, border-color 0.3s ease;
+      }
+
+      .video-frame:hover {
+        border-color: rgba(88, 204, 2, 0.4);
+        box-shadow:
+          0 0 0 1px rgba(88, 204, 2, 0.35),
+          0 20px 56px rgba(0, 0, 0, 0.65),
+          0 0 60px rgba(88, 204, 2, 0.14);
+      }
+
+      .video-thumb {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        cursor: pointer;
+        transition: filter 0.3s ease;
+      }
+
+      .video-frame:hover .video-thumb {
+        filter: brightness(0.75);
+      }
+
+      .video-play-btn {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        z-index: 2;
+      }
+
+      .video-play-btn svg {
+        width: 72px;
+        height: 72px;
+        filter: drop-shadow(0 0 18px rgba(88, 204, 2, 0.7));
+        transition: transform 0.2s ease, filter 0.2s ease;
+      }
+
+      .video-play-btn:hover svg {
+        transform: scale(1.12);
+        filter: drop-shadow(0 0 28px rgba(88, 204, 2, 0.9));
+      }
+
+      .video-frame iframe {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+        display: none;
+      }
+
+      .video-frame.playing .video-thumb,
+      .video-frame.playing .video-play-btn {
+        display: none;
+      }
+
+      .video-frame.playing iframe {
+        display: block;
+      }
+
       /* ── RESPONSIVE ── */
       @media (max-width: 980px) {
         .hero {
@@ -593,6 +674,33 @@
         </div>
       </section>
 
+      <!-- Concept Video Section -->
+      <section class="section-wrapper" aria-labelledby="video-heading">
+        <h2 class="section-title" id="video-heading">Demo Video</h2>
+        <div class="video-wrapper">
+          <div class="video-frame" id="videoFrame">
+            <img
+              class="video-thumb"
+              src="https://img.youtube.com/vi/-QIM7Pm9GG0/maxresdefault.jpg"
+              alt="Compete concept video thumbnail"
+            />
+            <div class="video-play-btn" id="videoPlayBtn" aria-label="Play concept video">
+              <svg viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="36" cy="36" r="35" fill="rgba(5,5,7,0.75)" stroke="#58cc02" stroke-width="2"/>
+                <polygon points="29,22 56,36 29,50" fill="#58cc02"/>
+              </svg>
+            </div>
+            <iframe
+              id="videoIframe"
+              src=""
+              title="Compete concept video"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+      </section>
+
       <!-- Deliverables Section -->
       <section class="section-wrapper" aria-labelledby="deliverables-heading">
         <h2 class="section-title" id="deliverables-heading">Deliverables</h2>
@@ -616,7 +724,7 @@
 
           <div class="gr-card">
             <div class="gr-card-label">GR4</div>
-            <div class="gr-card-title">Concept Video</div>
+            <div class="gr-card-title">Demo Video</div>
             <div class="gr-card-links">
               <a class="gr-link" href="https://docs.google.com/presentation/d/1gqJGWvlZoCA3u8hhYwWzGpmlxoLrYujgvzYsFuJeMeQ/edit?usp=sharing" target="_blank" rel="noopener noreferrer">Slides</a>
             </div>
@@ -638,11 +746,11 @@
             </div>
           </div>
 
-          <div class="gr-card coming-soon">
+          <div class="gr-card">
             <div class="gr-card-label">GR7/8</div>
             <div class="gr-card-title">Heuristic Evaluation Synthesis</div>
             <div class="gr-card-links">
-              <span class="gr-coming">Coming soon</span>
+              <a class="gr-link" href="https://drive.google.com/drive/folders/1UPSRhKkZRSLZLGapSqhf2ErrKco4ztkg?usp=drive_link" target="_blank" rel="noopener noreferrer">Drive Folder</a>
             </div>
           </div>
 
@@ -654,11 +762,11 @@
             </div>
           </div>
 
-          <div class="gr-card coming-soon">
+          <div class="gr-card">
             <div class="gr-card-label">GR9</div>
             <div class="gr-card-title">Poster, Pitch &amp; Demo Video</div>
             <div class="gr-card-links">
-              <span class="gr-coming">Coming soon</span>
+              <a class="gr-link" href="https://drive.google.com/drive/folders/1oZiUgwecCQstr21d_64YE8KLj2TqORMh?usp=drive_link" target="_blank" rel="noopener noreferrer">Drive Folder</a>
             </div>
           </div>
 
@@ -686,6 +794,19 @@
             hint.classList.remove('hidden');
           }
         }, { passive: true });
+      })();
+
+      // Video click-to-play
+      (function () {
+        const frame = document.getElementById('videoFrame');
+        const btn = document.getElementById('videoPlayBtn');
+        const iframe = document.getElementById('videoIframe');
+        function play() {
+          iframe.src = 'https://www.youtube.com/embed/-QIM7Pm9GG0?autoplay=1';
+          frame.classList.add('playing');
+        }
+        btn.addEventListener('click', play);
+        frame.querySelector('.video-thumb').addEventListener('click', play);
       })();
 
       // Spawn floating particles
